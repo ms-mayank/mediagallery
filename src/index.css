@@ -95,6 +95,15 @@ label:hover{
   top: 0;
   left: 0;
 }
+.remove-img{
+  
+  color: red;
+  border-radius: 50%;
+  padding: 0px 8px;
+  background: white;
+  font-weight: 900;
+  cursor: pointer;
+}
 
 
 /* modal styles */
@@ -254,6 +263,13 @@ img {
   }
   section > h2 {
     margin-top: 2rem;
+  }
+  .img-grid{
+    margin: auto 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .tooltip .tooltiptext{
+    width: 60px;
   }
   .btn-install{
     top: auto;
