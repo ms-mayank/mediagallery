@@ -9,14 +9,15 @@ import Footer from './comps/footer/Footer';
  
 function App() {
   const [selectimg, setSelectimg] =useState(null);
+  const [filelen,setFilelen] = useState(4);
   return (
     <>
     <div className="App">
       <Nav/>
       <InstallPWA/>
       <Title/>
-      <UploadForm/>
-      <ImageGrid setSelectimg={setSelectimg} />
+      {filelen>=4?<h2 style={{textAlign:'center'}}>Max 4 Files Allowed</h2>:<UploadForm />}
+      <ImageGrid setSelectimg={setSelectimg} setFilelen={setFilelen} />
       {selectimg && <Modal selectimg={selectimg} setSelectimg={setSelectimg}/>}
     </div>
       <Footer/>

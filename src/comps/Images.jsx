@@ -22,6 +22,7 @@ const Images = ({ setSelectimg, docu }) => {
       console.log('deleted', docu.id)
       await deleteDoc(doc(db, "images", delId));
     }).then(() => { console.log('updated store') }).catch( async (error) => {
+      await deleteDoc(doc(db, "images", delId));
       console.error('Error occured',error)
     });
 

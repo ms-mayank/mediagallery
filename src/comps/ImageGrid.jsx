@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import useFirestore from '../hooks/useFirestore'
 import Images from './Images'
-const ImageGrid = ({ setSelectimg }) => {
+const ImageGrid = ({ setSelectimg, setFilelen }) => {
   const { docs } = useFirestore('images')
+  setFilelen(docs.length)
+
 
   return (
     <div className='img-grid'>
