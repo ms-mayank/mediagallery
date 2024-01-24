@@ -4,16 +4,20 @@ import { getStorage, ref, deleteObject } from "firebase/storage";
 import { app } from '../firebase/config'
 import { getFirestore, doc, deleteDoc } from 'firebase/firestore'
 import Tooltip from './tooltip/Tooltip';
+// import { BiSolidLike } from "react-icons/bi";
+import { IoIosCloseCircle } from "react-icons/io";
 
 
 const Images = ({ setSelectimg, docu }) => {
   const [delText,setDelText] = useState('Delete');
-
+  const [tipClass,setTipClas] = useState('tooltiptext')
+  const storage = getStorage();
+  const db = getFirestore(app)
+  
   const setDelImg = (delimg, delId) => {
-    setDelText('Deleting...')
-    const storage = getStorage();
-    const db = getFirestore(app)
     const desertRef = ref(storage, delimg);
+    setTipClas('tooltipactive')
+    setDelText('Deleting...')
     deleteObject(desertRef).then(async () => {
       console.log('deleted', docu.id)
       await deleteDoc(doc(db, "images", delId));
@@ -33,10 +37,10 @@ const Images = ({ setSelectimg, docu }) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
       />
-      <Tooltip text={delText}>
-      <span className='remove-img' onClick={() => setDelImg(docu.url, docu.id)}>
-        X
-    </span>
+      {/* <BiSolidLike className='like-img'/> */}
+      <Tooltip text={delText} tipClass={tipClass} >
+      <IoIosCloseCircle  className='remove-img' onClick={() => setDelImg(docu.url, docu.id)}/>
+      
     </Tooltip>
     </motion.div></div>
   )

@@ -2,11 +2,11 @@ import React from 'react';
 import './tooltip.css';
 
 function Tooltip(props) {
-  const { text, children } = props;
+  const { text, tipClass, children } = props;
   return (
     <div className="tooltip">
       {children}
-      <span className="tooltiptext">{text}</span>
+      <span className={tipClass} >{text}</span>
     </div>
   );
 }

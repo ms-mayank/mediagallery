@@ -6,9 +6,9 @@ const ImageGrid = ({ setSelectimg }) => {
 
   return (
     <div className='img-grid'>
-      {docs && docs.map(doc => (
-        <Images setSelectimg={setSelectimg} docu={doc} key={doc.id}/>
-      ))}
+      
+      {docs.length!==0 ? docs.map(doc => (<Images setSelectimg={setSelectimg} docu={doc} key={doc.id}/>)) : <h3 style={{textAlign: "center"}}>Start Adding Images</h3>}
+      
     </div>
   )
 }
