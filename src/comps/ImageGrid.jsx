@@ -3,7 +3,11 @@ import useFirestore from '../hooks/useFirestore'
 import Images from './Images'
 const ImageGrid = ({ setSelectimg, setFilelen }) => {
   const { docs } = useFirestore('images')
-  setFilelen(docs.length)
+  
+  useEffect(() => {
+    
+    setFilelen(docs.length)
+  }, [docs])
 
 
   return (

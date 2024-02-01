@@ -16,6 +16,7 @@ function App() {
       <Nav/>
       <InstallPWA/>
       <Title/>
+      <button className="btn">Sign In</button>
       {filelen>=4?<h2 style={{textAlign:'center'}}>Max 4 Files Allowed</h2>:<UploadForm />}
       <ImageGrid setSelectimg={setSelectimg} setFilelen={setFilelen} />
       {selectimg && <Modal selectimg={selectimg} setSelectimg={setSelectimg}/>}

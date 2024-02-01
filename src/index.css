@@ -106,18 +106,18 @@ label:hover{
 }
 .like-img {
   color: white;
-  background: blue;
+
   border-radius: 100%;
   position: absolute;
   padding: 2px;
   top: 1rem;
   left: 1rem;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
 }
-.like-img:hover {
+ .like-active {
   color: blue;
-  background: white;
+
 }
 
 
