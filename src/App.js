@@ -16,7 +16,6 @@ function App() {
   const [selectimg, setSelectimg] = useState(null);
   const [filelen, setFilelen] = useState(4);
   const [user] = useAuthState(auth);
-  const [noSignin, setNoSignin] = useState(false);
   
   return (
     <>
@@ -25,16 +24,12 @@ function App() {
         <InstallPWA />
         <Title />
       
-        {/* {user ? `Welcome ${auth.currentUser.email}` : ""}
-        {user ?  <Logout /> : <Login />} */}
-        {user ?
-        <>
-        { `Welcome ${auth.currentUser.email}` }
-        <Logout />
+        {user ? `Welcome ${auth.currentUser.email}` : ""}
+        {user ?  <Logout /> : <Login />}
         {filelen >= 4 ? <h2 style={{ textAlign: 'center' }}>Max 4 Files Allowed</h2> : <UploadForm />}
         <ImageGrid setSelectimg={setSelectimg} setFilelen={setFilelen} />
         {selectimg && <Modal selectimg={selectimg} setSelectimg={setSelectimg} />}
-        </> :<Login/>}
+        
         
       </div>
       <Footer />
