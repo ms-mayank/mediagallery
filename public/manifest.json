@@ -25,7 +25,7 @@
     }
   ],
   "id": "/mediagallery",
-  "start_url": "/mediagallery",
+  "start_url": "/mediagallery/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
