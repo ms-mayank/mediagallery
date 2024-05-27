@@ -24,6 +24,7 @@
       "sizes": "512x512"
     }
   ],
+  "id": "/mediagallery",
   "start_url": "/mediagallery",
   "display": "standalone",
   "theme_color": "#000000",
